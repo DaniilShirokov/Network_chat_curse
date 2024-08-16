@@ -10,6 +10,7 @@ public class MessageReceiver extends Thread {
 
     public MessageReceiver(BufferedReader in) {
         this.in = in;
+
     }
 
     public void run() {
@@ -20,7 +21,13 @@ public class MessageReceiver extends Thread {
                 System.out.println(message);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Соединение закрыто. Завершение работы потока.");
+        } finally {
+            try {
+                in.close(); // Закрываем BufferedReader после завершения работы
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

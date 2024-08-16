@@ -21,6 +21,7 @@ public class ClientHandler extends Thread {
             Server.addClient(out);
             out.println("Welcome to the chat!");
             out.println("To exit, enter '/exit'");
+
             username = in.readLine();
 
             String welcomeMessage = username + " has joined the chat.";

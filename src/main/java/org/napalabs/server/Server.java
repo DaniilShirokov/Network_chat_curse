@@ -9,7 +9,7 @@ import java.util.Set;
 public class Server {
     private static Set<PrintWriter> clientWriters = new HashSet<>();
     private static final String LOG_FILE = "server_log.log";
-    final static String FILE_NAME = "settings";
+    final static String FILE_NAME = "settings.txt";
 
     public static void main(String[] args) throws IOException {
         Settings settings = new Settings(FILE_NAME);

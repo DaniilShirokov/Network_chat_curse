@@ -8,7 +8,6 @@ public class ChatClient {
 
     private PrintWriter out;
     private BufferedReader in;
-    protected boolean running = true;
 
     public static void main(String[] args) {
         new ChatClient().start();
@@ -32,7 +31,6 @@ public class ChatClient {
             String message;
             while ((message = consoleIn.readLine()) != null) {
                 if (message.equalsIgnoreCase("/exit")) {
-                    stop();
                     break;
                 }
                 out.println(message);
@@ -41,9 +39,5 @@ public class ChatClient {
             e.printStackTrace();
         }
 
-    }
-
-    public void stop() {
-        running = false;
     }
 }
